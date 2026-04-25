@@ -41,8 +41,7 @@ def login():
         <input type="submit" value="Login">
     </form>
     <a href="/">Back to Home</a>
-    ''' 
-
+    '''  
 @app.route('/dashboard')
 def dashboard():
     # AUTHORIZATION: Check if user is actually logged in
