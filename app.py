@@ -27,9 +27,21 @@ def login():
             session['user'] = username
             return redirect(url_for('dashboard'))
         
-        return "Invalid username or password!"
+        else:
+            message = '<p style="color : red">Invalid username or password ! </p>
     
-    return render_template('login.html')
+    else:
+        message = ""
+        return f'''
+    <h1>Login</h1>
+    {message}
+    <form method="POST">
+        <input name="username" placeholder="Username"><br><br>
+        <input name="password" type="password" placeholder="Password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <a href="/">Back to Home</a>
+    ''' 
 
 @app.route('/dashboard')
 def dashboard():
